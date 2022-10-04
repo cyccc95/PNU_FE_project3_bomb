@@ -1,1 +1,1 @@
-# project3_boom
+# Javascript boom game
