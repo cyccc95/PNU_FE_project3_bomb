@@ -1,11 +1,11 @@
-### Javascript bomb game
-# Web service
+# Javascript bomb game
+### Web service
 + https://cyccc95.github.io/PNU_FE_project3_bomb/
-# HTML
+### HTML
 + Semantic Tag
-# CSS
+### CSS
 + Flexbox
-# Javascript
+### Javascript
 + DOM
 + Selector
 + Eventlistener
