@@ -1,6 +1,6 @@
 ### Javascript bomb game
 # Web service
-+ https://cyccc95.github.io/PNU_FE_project3_boom/
++ https://cyccc95.github.io/PNU_FE_project3_bomb/
 # HTML
 + Semantic Tag
 # CSS
@@ -10,4 +10,4 @@
 + Selector
 + Eventlistener
 + Function
-+ If_else
++ Conditional, repetitive statement
