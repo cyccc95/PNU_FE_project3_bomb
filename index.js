@@ -35,10 +35,21 @@ const show = (id) => {
     if(shuffleFlag == false){ // 폭탄섞기를 안했으면 실행
         document.querySelector('#msg').innerHTML = "폭탄섞기를 해주세요";
     } else { // 폭탄섞기 하고 나서 실행
-        if(cnt == 8){ // 선택한 박스가 8개이면 실행(성공한거임)
-            document.querySelector(`#box${id}`).innerHTML = '<img src="hart.png">'; // 마지막 박스 이미지 하트
-            document.querySelector('#msg').innerHTML = "성공"; // 버튼 밑에 성공 메세지 출력
-           
+        if(cnt == 7){ // 선택한 박스가 7개이면 실행
+            if(id == randomNum + 1){ // 누른 박스가 폭탄이면
+                document.querySelector(`#box${id}`).innerHTML = '<img src="boom.png">'; // 폭탄 이미지
+                document.querySelector('#msg').innerHTML = "실패"; // 버튼 밑에 실패 메세지 출력
+                for(let i = 0; i < 9; i++){ // 폭탄을 눌러서 실패하면 모든 박스의 onclick 이벤트 제거
+                    document.querySelector(`#box${i+1}`).onclick = null;
+                }
+            } else{ // 누른 박스가 폭탄이 아니면 (박스 1개 남아서 성공한거임)
+                for(let i = 0; i < 9; i++){ 
+                    document.querySelector(`#box${i+1}`).onclick = null;
+                    document.querySelector(`#box${i+1}`).innerHTML = '<img src="hart.png">'; // 모든 박스 하트 이미지, onclick 이벤트 제거
+                }
+                document.querySelector('#msg').innerHTML = "성공"; // 버튼 밑에 성공 메세지 출력
+                
+            }
         } else { // 8개를 성공하기 전까지 실행
             if(id == randomNum + 1){ // 누른 박스가 폭탄이면
                 document.querySelector(`#box${id}`).innerHTML = '<img src="boom.png">'; // 폭탄 이미지
